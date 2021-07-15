@@ -1,0 +1,26 @@
+{
+  "name": "videoencoderbot",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your bot token",
+      "value": ""
+    },
+    "API_ID": {
+      "description": "you telegram api id"
+    },
+    "API_HASH": {
+      "description": "you telegram api hash"
+    },
+    "MONGO_URL": {
+      "description": "your mongo database url"
+}
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
