@@ -8,16 +8,19 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 
-# Basics
-api_id = int(os.environ.get("API_ID", 12345))
-api_hash = os.environ.get("API_HASH")
+if 'API_ID' and 'API_HASH' in os.environ:
+    api_id = int(os.environ.get("API_ID", 12345))
+    api_hash = os.environ.get("API_HASH")
+else:
+    api_id = config("API_ID", cast=int)
+    api_hash = config("API_HASH")
 
 try:
     if 'BOT_TOKEN' and 'MONGO_URL' in os.environ:
         bot_token = os.environ.get("BOT_TOKEN")
         mongo = os.environ.get("MONGO_URL")
     else:
-        bot_token = config("BOT_TOKEN", default=None)
+        bot_token = config("BOT_TOKEN")
         mongo = config("MONGO_URL")
 except Exception as e:
     logging.warning(e)
