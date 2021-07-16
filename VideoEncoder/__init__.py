@@ -1,4 +1,5 @@
 from telethon import TelegramClient
+from decouple import config
 import logging
 import os
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -12,8 +13,12 @@ api_id = int(os.environ.get("API_ID", 12345))
 api_hash = os.environ.get("API_HASH")
 
 try:
-    bot_token = os.environ.get("BOT_TOKEN")
-    mongo = os.environ.get("MONGO_URL")
+    if 'BOT_TOKEN' and 'MONGO_URL' in os.environ:
+        bot_token = os.environ.get("BOT_TOKEN")
+        mongo = os.environ.get("MONGO_URL")
+    else:
+        bot_token = config("BOT_TOKEN", default=None)
+        mongo = config("MONGO_URL")
 except Exception as e:
     logging.warning(e)
     exit(0)
