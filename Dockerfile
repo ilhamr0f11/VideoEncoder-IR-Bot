@@ -8,4 +8,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . /VideoEncoder
 
-CMD python3 /app/VideoEncoder
+CMD python3 /VideoEncoder
