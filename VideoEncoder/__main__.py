@@ -30,5 +30,5 @@ for name in files:
 
 logging.info("Successfully deployed VideoEncoder!")
 
-if __name__ == "__main__.py":
+#if __name__ == "__main__":
     BotzHub.run_until_disconnected()
