@@ -1,6 +1,4 @@
-FROM python-3.10
-
-PULL . /VideoEncoder
+FROM python-3.10 -m VideoEncoder
 
 WORKDIR /VideoEncoder
 
