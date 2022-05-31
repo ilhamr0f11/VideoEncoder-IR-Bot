@@ -1,6 +1,6 @@
 version: "3.10"
 services:
-  worker:
+  worker: python3 -m VideoEncoder
     build: .
     environment:
       API_ID: $API_ID  
