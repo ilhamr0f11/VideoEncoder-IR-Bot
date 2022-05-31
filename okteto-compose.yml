@@ -1,11 +1,9 @@
+version: "3.10"
 services:
-  drone-vc-p:
+  worker:
     build: .
     environment:
       API_ID: $API_ID  
       API_HASH: $API_HASH  
       BOT_TOKEN: $BOT_TOKEN 
       MONGO_URL: $MONGO_URL
-    resources:
-      cpu: 1000m
-      memory: 3Gi
