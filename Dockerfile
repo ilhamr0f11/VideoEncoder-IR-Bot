@@ -1,11 +1,11 @@
 FROM python:3.10
 
-WORKDIR /VideoEncoder
+WORKDIR /app
 
-COPY requirements.txt /VideoEncoder
+COPY requirements.txt /app
 
 RUN pip3 install -r requirements.txt
 
-COPY . /VideoEncoder
+COPY . /app
 
-CMD python3 /VideoEncoder
+CMD python3 /app
