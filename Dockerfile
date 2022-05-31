@@ -1,5 +1,7 @@
 FROM python-3.10
 
+PULL ./VideoEncoder
+
 WORKDIR /VideoEncoder
 
 COPY requirements.txt /VideoEncoder
